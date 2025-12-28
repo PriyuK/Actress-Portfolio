@@ -1,0 +1,112 @@
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    cursor: default;
+    /* Show default cursor */
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Removed scale to prevent blurriness */
+}
+
+/* Base Layer: Pure Black & White */
+.layer-base {
+    z-index: 1;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    /* Dim it down using opacity */
+}
+
+.layer-overlay {
+    z-index: 3;
+    /* The mask will be applied inline via React */
+    /* mask-image: radial-gradient(circle 150px at var(--x) var(--y), black 100%, transparent 100%); */
+    /* webkit-mask-image needed for Chrome/Safari */
+}
+
+/* Custom Cursor/Lens Ring */
+.lens-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* slight outer glow to hide aliasing */
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    backdrop-filter: brightness(1.1);
+    /* Subtle highlight in the glass */
+    -webkit-backface-visibility: hidden;
+    /* Fix related to chrome rendering */
+    backface-visibility: hidden;
+    transition: width 0.3s, height 0.3s;
+    /* Smooth resize if needed */
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    text-align: center;
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.9;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    letter-spacing: 0.5em;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .lens-cursor {
+        display: block;
+        /* ensure it's visible on mobile if we want the auto-animation */
+        position: absolute;
+        /* Moves with scroll, stays in hero */
+        width: 200px;
+        /* Slightly smaller on mobile */
+        height: 200px;
+    }
+}

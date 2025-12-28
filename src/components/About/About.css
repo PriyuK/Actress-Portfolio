@@ -1,0 +1,139 @@
+.about-section {
+    position: relative;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    padding: var(--spacing-xl) 0;
+    overflow: hidden;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+@media (min-width: 900px) {
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* --- Left Column: Text & Stats --- */
+.about-content {
+    flex: 1;
+    padding-right: var(--spacing-lg);
+}
+
+.section-label {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    display: block;
+    opacity: 0.7;
+}
+
+.about-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.about-bio {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    max-width: 500px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md) var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-lg);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-color);
+    margin-bottom: 0.2rem;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+/* --- Right Column: Image --- */
+.about-image-wrapper {
+    flex: 1;
+    position: relative;
+    height: 600px;
+    /* Fixed height for the editorial look */
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    /* Slight softening */
+    filter: grayscale(20%) contrast(1.1);
+    /* Editorial mood */
+    transition: all 0.5s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+    filter: grayscale(0%) contrast(1.0);
+}
+
+/* Decorative backdrop text */
+.bg-text {
+    position: absolute;
+    top: -5%;
+    right: -10%;
+    font-family: var(--font-display);
+    font-size: 15rem;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-image-wrapper {
+        height: 400px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Still keep 2 columns on mobile if possible */
+    }
+}
