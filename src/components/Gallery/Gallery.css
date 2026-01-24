@@ -17,10 +17,9 @@
     text-align: center;
 }
 
-/* Masonry Grid Layout */
+/* Masonry Grid Layout (Old Style) */
 .gallery-grid {
     columns: 3 300px;
-    /* 3 columns, minimum 300px width */
     column-gap: var(--spacing-md);
 }
 
@@ -44,6 +43,12 @@
 .gallery-item:hover .gallery-img {
     transform: scale(1.03);
     filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        columns: 2 150px;
+    }
 }
 
 /* Lightbox Overlay */
@@ -89,10 +94,4 @@
 
 .lightbox-close:hover {
     opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .gallery-grid {
-        columns: 2 150px;
-    }
 }

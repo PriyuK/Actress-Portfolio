@@ -105,69 +105,109 @@
     background-color: var(--accent-color);
 }
 
-/* The Table Layout */
-.credits-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Main Content Area */
+.work-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
 }
 
-.credit-row {
+/* Category Sections */
+.category-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.category-header {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--accent-color);
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Simple List Layout */
+.credits-simple-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.credit-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
+    align-items: baseline;
 }
 
-.credit-row:hover {
-    background-color: rgba(255, 255, 255, 0.03);
+.credit-item:last-child {
+    border-bottom: none;
 }
 
-.credit-cell {
-    padding: var(--spacing-md) var(--spacing-sm);
+.credit-item:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.credit-year {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    text-align: right;
+    padding-right: var(--spacing-sm);
+}
+
+/* Info Column */
+.credit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+@media (min-width: 768px) {
+    .credit-info {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+}
+
+.credit-role {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.credit-details {
     font-family: var(--font-main);
     font-size: 1rem;
     color: var(--text-secondary);
 }
 
-.col-year {
-    width: 10%;
-    opacity: 0.6;
-}
-
-.col-role {
-    width: 30%;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.col-production {
-    width: 35%;
-}
-
-.col-director {
-    width: 25%;
+.credit-director {
     font-style: italic;
-    text-align: right;
+    opacity: 0.7;
+    margin-left: 5px;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .col-director {
-        display: none;
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .credit-item {
+        grid-template-columns: 60px 1fr;
+        gap: var(--spacing-sm);
     }
 
-    /* Hide director on small screens */
-    .col-year {
-        width: 15%;
+    .credit-role {
+        font-size: 1.1rem;
     }
 
-    .col-role {
-        width: 40%;
-    }
-
-    .col-production {
-        width: 45%;
-    }
-
-    .work-title {
-        font-size: 2.5rem;
+    .credit-details {
+        font-size: 0.9rem;
     }
 }
