@@ -49,6 +49,8 @@
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    min-width: 0;
+    width: 100%;
 }
 
 .main-video {
@@ -66,6 +68,8 @@
     overflow-y: auto;
     padding-right: 5px;
     /* Space for scrollbar */
+    min-width: 0;
+    width: 100%;
 }
 
 .clip-item {

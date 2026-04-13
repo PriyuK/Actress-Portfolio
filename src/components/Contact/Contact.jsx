@@ -40,7 +40,6 @@ const Contact = () => {
 
                 <div className="social-links">
                     <a href="https://www.instagram.com/rekha_official22" target="_blank" rel="noopener noreferrer" className="social-item">Instagram</a>
-                    <a href="https://www.youtube.com/@RekhaRanians" target="_blank" rel="noopener noreferrer" className="social-item">YouTube</a>
                 </div>
 
                 <div className="footer-bottom">
