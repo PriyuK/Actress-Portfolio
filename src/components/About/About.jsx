@@ -10,7 +10,7 @@ const About = () => {
         { label: 'Eyes', value: 'Dark Brown' },
         { label: 'Hair', value: 'Black' },
         { label: 'Age Range', value: '20-25' }, // Adjusted slightly based on youthful look
-        { label: 'Location', value: 'Bilaspur, C.G.' },
+        { label: 'Location', value: 'Taloja, Navi Mumbai' },
         { label: 'Languages', value: 'English, Hindi, Chhattisgarhi' },
     ];
 
