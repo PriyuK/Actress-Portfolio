@@ -16,7 +16,7 @@ const creditsData = {
     Theatre: [
         { year: '-', role: 'Shobha (Negative Lead)', production: 'Faisla (Bilaspur)', director: '-' },
         { year: '-', role: 'Supportive Friend', production: 'Bade Bhai Sahab (Nagpur)', director: '-' },
-        { year: '2023', role: 'Student', production: '3-Month Theatre Training Course', director: '-' },
+        { year: '2023', role: 'Student', production: '7-Month Theatre Training Course', director: '-' },
     ],
     Modeling: [
         { year: '2023+', role: 'Runway Model', production: '20+ Local Fashion Shows', director: 'Chhattisgarh' },
