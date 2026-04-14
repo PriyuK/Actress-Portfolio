@@ -9,7 +9,7 @@ const About = () => {
         { label: 'Height', value: "5'2\"" },
         { label: 'Eyes', value: 'Dark Brown' },
         { label: 'Hair', value: 'Black' },
-        { label: 'Age Range', value: '20-25' }, // Adjusted slightly based on youthful look
+        { label: 'Age', value: '22' }, // Adjusted slightly based on youthful look
         { label: 'Location', value: 'Taloja, Navi Mumbai' },
         { label: 'Languages', value: 'English, Hindi, Chhattisgarhi' },
     ];
