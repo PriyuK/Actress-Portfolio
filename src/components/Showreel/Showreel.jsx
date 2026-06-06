@@ -9,6 +9,13 @@ const videos = [
         duration: "Main",
         src: "/introduction bhideo.MOV",
         poster: "" // You can add a poster image URL here later
+    },
+    {
+        id: 2,
+        title: "Acting Showreel",
+        duration: "Main Reel",
+        src: "/showreel.MOV",
+        poster: ""
     }
 ];
 
